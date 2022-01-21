@@ -10,12 +10,15 @@ on:
 
 jobs:
   pest:
-    name: Tests (Pest)
+    name: Tests (Pest) L${{ matrix.laravel }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        laravel: [7, 8, 9]
 
     steps:
     - uses: actions/checkout@v2
     - name: Install composer dependencies
-      run: composer install
+      run: composer require "illuminate/framework:^${{ matrix.laravel }}.0"
     - name: Run tests
       run: vendor/bin/pest
