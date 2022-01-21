@@ -26,6 +26,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install composer dependencies
-      run: composer require "laravel/framework:^${{ matrix.laravel }}.0" "orchestra/testbench:^${{ matrix.testbench }}"
+      run: composer require "laravel/framework:^${{ matrix.laravel }}.0" "orchestra/testbench:^${{ matrix.testbench }} --dev"
     - name: Run tests
       run: vendor/bin/pest
