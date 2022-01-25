@@ -20,6 +20,7 @@
         }
     ],
     "require": {
+        "php": "^7.2|^8.0",
         "livewire/livewire": "^2.3",
         "illuminate/view": "^7.0|^8.20|^9.0"
     },
